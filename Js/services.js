@@ -59,7 +59,7 @@ function serviceGetir() {
 
             <div class="flex items-center justify-between pt-4 border-t border-[#1a2d5a]">
               <button onclick="serredakte(${item.id})" class="px-4 py-2 rounded-xl bg-blue-600 text-white text-sm font-medium hover:bg-blue-500 transition">
-                Duzenle
+                Redakte et
               </button>
 
               <button onclick="sersil(${item.id})" class="px-4 py-2 rounded-xl bg-red-600/90 text-white text-sm font-medium hover:bg-red-500 transition">
@@ -90,66 +90,65 @@ const serupdate1 = document.getElementById("serupdate1");
 const serelave1 = document.getElementById("serelave1");
 
 function serredakte(id) {
-    let title = document.getElementById("title");
-    let about = document.getElementById("about");
-    let image = document.getElementById("image");
-
-    serModal();
-
-    fetch(`${base_url}/${id}`)
-        .then((res) => res.json())
-        .then((data) => {
-            title.value = data.title;
-            about.value = data.about;
-            image.value = data.image;
-            x = id;
-
-            serupdate1.classList.remove("hidden");
-            serelave1.classList.add("hidden");
-        });
-}
-
-function serupdate() {
-    let title = document.getElementById("title");
-    let about = document.getElementById("about");
-    let image = document.getElementById("image");
-
-    const data = {
-        title: title.value,
-        about: about.value,
-        image: image.value
-    };
-
-    fetch(`${base_url}/${x}`, {
-        method: "PUT",
-        body: JSON.stringify(data),
-        headers: {
-            "Content-type": "application/json; charset=UTF-8",
-        },
-    })
-        .then(res => res.json())
-        .then(() => {
-            console.log("Yeniləndi");
-            serviceGetir();
-
-            title.value = "";
-            about.value = "";
-            image.value = "";
-            x = 0;
-        });
-}
-
-
-function serModal(){
-  sermodal.classList.toggle('hidden')
   let title = document.getElementById("title");
   let about = document.getElementById("about");
   let image = document.getElementById("image");
 
-  title.value=''
-  image.value=''
-  about.value=''
+  serModal();
+
+  fetch(`${base_url}/${id}`)
+    .then((res) => res.json())
+    .then((data) => {
+      title.value = data.title;
+      about.value = data.about;
+      image.value = data.image;
+      x = id;
+
+      serupdate1.classList.remove("hidden");
+      serelave1.classList.add("hidden");
+    });
+}
+
+function serupdate() {
+  let title = document.getElementById("title");
+  let about = document.getElementById("about");
+  let image = document.getElementById("image");
+
+  const data = {
+    title: title.value,
+    about: about.value,
+    image: image.value,
+  };
+
+  fetch(`${base_url}/${x}`, {
+    method: "PUT",
+    body: JSON.stringify(data),
+    headers: {
+      "Content-type": "application/json; charset=UTF-8",
+    },
+  })
+    .then((res) => res.json())
+    .then(() => {
+      console.log("Yeniləndi");
+      serviceGetir();
+
+      title.value = "";
+      about.value = "";
+      image.value = "";
+      x = 0;
+    });
+}
+
+function serModal() {
+  sermodal.classList.toggle("hidden");
+  let title = document.getElementById("title");
+  let about = document.getElementById("about");
+  let image = document.getElementById("image");
+
+  title.value = "";
+  image.value = "";
+  about.value = "";
 
   serupdate1.classList.add("hidden");
-            serelave1.classList.remove("hidden");
+  serelave1.classList.remove("hidden");
 }

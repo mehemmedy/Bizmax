@@ -1,68 +1,96 @@
 <!DOCTYPE html>
 <html lang="az">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Daxil ol</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700&display=swap" rel="stylesheet"/>
-  <style> body { font-family: 'Inter', sans-serif; } </style>
-</head>
-<body class="min-h-screen bg-[#081028] flex items-center justify-center">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+    }
 
+    .toast {
+      transform: translateX(-50%) translateY(-80px);
+      transition: transform 0.3s ease-in-out, opacity 0.3s ease;
+    }
+
+    .toast.show {
+      transform: translateX(-50%) translateY(0);
+    }
+  </style>
+</head>
+
+<body class="min-h-screen bg-[#081028] flex items-center justify-center relative">
+  <div id="toast"
+    class="toast fixed top-5 left-1/2 z-50 min-w-[300px] bg-[#1a0a0a] border border-red-500/30 rounded-xl px-4 py-3 flex items-center gap-3 overflow-hidden">
+    <div class="w-[22px] h-[22px] rounded-full bg-red-500/15 flex items-center justify-center flex-shrink-0">
+      <svg class="w-[11px] h-[11px]" fill="none" stroke="#ef4444" stroke-width="2.5" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+      </svg>
+    </div>
+    <div class="flex-1">
+      <p class="text-[13px] font-bold text-red-300 leading-tight">E-poçt və ya şifrə yanlışdır</p>
+    </div>
+    <button onclick="hideToast()" class="text-red-900 hover:text-red-500 transition-colors">
+      <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+      </svg>
+    </button>
+
+  </div>
   <div class="w-[380px] bg-[#0b1739] border border-white/[0.07] rounded-2xl px-9 py-10">
 
-    <!-- Logo -->
     <div class="flex items-center gap-3 mb-8">
       <img src="https://html.laralink.com/bizmax/assets/img/logo.svg" alt="">
-      
-      
     </div>
 
-
-    <!-- E-poçt -->
     <div class="mb-5">
       <label class="block text-[11px] font-bold text-gray-400 uppercase tracking-widest mb-2">E-poçt</label>
-      <input
-        type="email"
-        placeholder="ornek@mail.com"
-        class="w-full bg-[#081028] border border-white/[0.08] rounded-lg px-3.5 py-2.5 text-[14px] font-medium text-gray-200 placeholder-gray-700 outline-none focus:border-[#017bfe]/50 transition-colors"
-      />
+      <input id="email" type="email"
+        class="w-full bg-[#081028] border border-white/[0.08] rounded-lg px-3.5 py-2.5 text-[14px] font-medium text-gray-200 placeholder-gray-700 outline-none focus:border-[#017bfe]/50 transition-colors" />
     </div>
 
-    <!-- Şifrə -->
     <div class="mb-7">
       <label class="block text-[11px] font-bold text-gray-400 uppercase tracking-widest mb-2">Şifrə</label>
-      <input
-        type="password"
-        placeholder="••••••••"
-        class="w-full bg-[#081028] border border-white/[0.08] rounded-lg px-3.5 py-2.5 text-[14px] font-medium text-gray-200 placeholder-gray-700 outline-none focus:border-[#017bfe]/50 transition-colors"
-      />
+      <input id="pswrd" type="password" placeholder="••••••••"
+        class="w-full bg-[#081028] border border-white/[0.08] rounded-lg px-3.5 py-2.5 text-[14px] font-medium text-gray-200 placeholder-gray-700 outline-none focus:border-[#017bfe]/50 transition-colors" />
     </div>
 
-    <!-- Məni xatırla & Şifrəni unutdum -->
-    <div class="flex items-center justify-between mb-7">
-      <label class="flex items-center gap-2 cursor-pointer">
-        <input type="checkbox" class="accent-[#017bfe] cursor-pointer" />
-        <span class="text-[13px] font-medium text-gray-500">Məni xatırla</span>
-      </label>
-      <button class="text-[13px] font-semibold text-[#017bfe] hover:text-blue-400 transition-colors">
-        Şifrəni unutdum?
-      </button>
-    </div>
-
-    <!-- Daxil ol düyməsi -->
-    <button class="w-full bg-[#017bfe] hover:bg-[#0267d4] active:scale-[0.99] transition-all text-white text-[14px] font-bold rounded-lg py-3 mb-6 tracking-wide">
+    <button onclick="yoxla()"
+      class="w-full bg-[#017bfe] hover:bg-[#0267d4] active:scale-[0.99] transition-all text-white text-[14px] font-bold rounded-lg py-3 mb-6 tracking-wide">
       Daxil ol
     </button>
 
-    <!-- Qeydiyyat -->
-    <p class="text-center text-[13px] font-medium text-gray-600">
-      Hesabınız yoxdur?
-      <span class="text-[#017bfe] font-semibold cursor-pointer hover:text-blue-400 transition-colors">Qeydiyyat</span>
-    </p>
-
   </div>
+  <script>
+    const email = document.getElementById('email');
+    const pswrd = document.getElementById('pswrd');
 
+    const x = "admin";
+
+    function yoxla() {
+      if (email.value === x && pswrd.value === x) {
+        window.location.href = 'services.htm';
+      } else {
+        showToast()
+      }
+    }
+
+    let toastTimer;
+
+    function showToast() {
+      const toast = document.getElementById('toast');
+      toast.classList.add('show')
+      toastTimer = setTimeout(hideToast, 3000);
+    }
+
+    function hideToast() {
+      document.getElementById('toast').classList.remove('show');
+    }
+  </script>
 </body>
+
 </html>
