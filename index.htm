@@ -6,12 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bizmax - Corporate And Consulting Business</title>
     <link href="src/output.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
         body {
             font-family: 'Rubik';
         }
-        .testimonial{ background-image: url(img/testimonialbg.jpeg);}
+
+        .testimonial {
+            position: relative;
+            background-image: url(img/testimonialbg.jpeg);
+            background-position: center;
+            background-size: cover;
+        }
     </style>
 </head>
 
@@ -27,16 +34,102 @@
         <!-- !Chooseus hissesi Mehdi-->
         <section class="chooseus">aaa</section>
 
-        <section class="testimonial">
-            <div class="container">
-                <div class="sectionheading">
-                    <h3>Testimonial</h3>
+        <section class="testimonial p-8 lg:p-16 overflow-hidden">
+            <div class="container flex flex-col lg:flex-row gap-3">
+                <div class="texttestimonial w-full lg:w-1/3">
+                    <div class="sectionheading">
+                        <h3 class="text-[20px] text-[#e9a132]">Testimonial</h3>
+                    </div>
+                    <div class="sectiontext flex flex-col gap-4">
+                        <h2 class="text-[36px] text-[#18191d] font-semibold">What They're Saying?</h2>
+                        <p class="text-[16px] text-[#666]">Providing legal advice, contract drafting, compliance
+                            assistance,
+                            intellectual property protection, and other legal support for businesses.</p>
+                    </div>
                 </div>
-
+                <div class="tcards gap-5 w-full grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 lg:w-2/3">
+                    <div class="tcard mx-auto">
+                        <div class="bg-white p-4 shadow-2xs rounded-2xl flex flex-col border gap-3">
+                            <div class="w-16 h-16 rounded-full border overflow-hidden">
+                                <img src="img/qaqas1.jpeg" class="" alt="">
+                            </div>
+                            <div class="text-[#e9a132] flex">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                            <p class="text-[#666] text-[16px] max-w-xs">I've been using [business name] for the past year and I'm so glad I did. Their products and services are top-notch and their customer service is amazing. I would highly recommend them to anyone</p>
+                            <div>
+                                <h3 class="text-[18px] font-semibold">Victor Osimhen</h3>
+                                <p class="text-[16px] text-[#666]">Striker</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tcard mx-auto">
+                        <div class="bg-white p-4 shadow-2xs rounded-2xl flex flex-col border gap-3">
+                            <div class="w-16 h-16 rounded-full border overflow-hidden">
+                                <img src="img/qaqas4.jpeg" alt="">
+                            </div>
+                            <div class="text-[#e9a132] flex">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                            <p class="text-[#666] text-[16px] max-w-xs">I've been using [business name] for the past year and I'm so glad I did. Their products and services are top-notch and their customer service is amazing. I would highly recommend them to anyone</p>
+                            <div>
+                                <h3 class="text-[18px] font-semibold">Mauro Icardi</h3>
+                                <p class="text-[16px] text-[#666]">Striker</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tcard mx-auto">
+                        <div class="bg-white p-4 shadow-2xs rounded-2xl flex flex-col border gap-3">
+                            <div class="w-16 h-16 rounded-full border overflow-hidden">
+                                <img src="img/qaqas3.jpeg" alt="">
+                            </div>
+                            <div class="text-[#e9a132] flex">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                            <p class="text-[#666] text-[16px] max-w-xs">I've been using [business name] for the past year and I'm so glad I did. Their products and services are top-notch and their customer service is amazing. I would highly recommend them to anyone</p>
+                            <div>
+                                <h3 class="text-[18px] font-semibold">Baris Alper</h3>
+                                <p class="text-[16px] text-[#666]">Winger</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tcard mx-auto">
+                        <div class="bg-white p-4 shadow-2xs rounded-2xl flex flex-col border gap-3">
+                            <div class="w-16 h-16 rounded-full border overflow-hidden">
+                                <img src="img/qaqas2.jpeg" alt="">
+                            </div>
+                            <div class="text-[#e9a132] flex">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                            <p class="text-[#666] text-[16px] max-w-xs">I've been using [business name] for the past year and I'm so glad I did. Their products and services are top-notch and their customer service is amazing. I would highly recommend them to anyone</p>
+                            <div>
+                                <h3 class="text-[18px] font-semibold">Gabriel Sara</h3>
+                                <p class="text-[16px] text-[#666]">Midfielder</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
     </main>
     <footer></footer>
+
 </body>
 
 </html>
