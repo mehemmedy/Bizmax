@@ -52,32 +52,40 @@ const tm = [
 
 teammembers.innerHTML = tm.map(item =>
     `
-                    <div class="w-72 mx-auto group">
-                        <div class="relative overflow-hidden rounded-[30px]">
-                            <img src="${item.image}"
-                                class="w-full h-[400px] object-cover">
-                            <div
-                                class="absolute bottom-0 w-full bg-[#111] text-white text-center py-6 transition-all duration-300 group-hover:opacity-0">
-                                <h3 class="text-xl font-semibold">${item.name}</h3>
-                                <p class="text-sm">${item.job}</p>
-                            </div>
-                            <div class="absolute bottom-0 w-full 
-                                    bg-orange-400 text-white text-center p-6
-                                    translate-y-full 
-                                    group-hover:translate-y-0
-                                    transition-all duration-500">
-                                <div class="flex justify-center gap-4 mb-4">
-                                    <div class="w-10 h-10 rounded-full bg-gray-500 flex items-center justify-center cursor-pointer hover:bg-blue-500 duration-200"><i class="fa-brands fa-facebook-f"></i>
-                                    </div>
-                                    <div class="w-10 h-10 rounded-full bg-gray-500 flex items-center justify-center cursor-pointer hover:bg-blue-400 duration-200"><i class="fa-brands fa-twitter"></i>
-                                    </div>
-                                    <div class="w-10 h-10 rounded-full bg-gray-500 flex items-center justify-center cursor-pointer hover:bg-pink-400 duration-200"><i class="fa-brands fa-dribbble"></i>
-                                    </div>
-                                </div>
-                                <h3 class="text-xl font-semibold">${item.name}</h3>
-                                <p class="text-sm">${item.job}</p>
-                            </div>
-                        </div>
-                    </div>
+                    <div class="w-full max-w-sm mx-auto group">
+    <div class="relative overflow-hidden rounded-[30px] aspect-[3/4]">
+        
+        <img src="${item.image}"
+            class="w-full h-full object-cover">
+
+        <div
+            class="absolute bottom-0 w-full bg-[#111] text-white text-center py-4 sm:py-6 transition-all duration-300 group-hover:opacity-0">
+            <h3 class="text-lg sm:text-xl font-semibold">${item.name}</h3>
+            <p class="text-xs sm:text-sm">${item.job}</p>
+        </div>
+
+        <div class="absolute bottom-0 w-full
+                bg-orange-400 text-white text-center p-4 sm:p-6
+                translate-y-full 
+                group-hover:translate-y-0
+                transition-all duration-500">
+
+            <div class="flex justify-center gap-3 sm:gap-4 mb-3 sm:mb-4">
+                <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-gray-500 flex items-center justify-center cursor-pointer hover:bg-blue-500 duration-200">
+                    <i class="fa-brands fa-facebook-f"></i>
+                </div>
+                <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-gray-500 flex items-center justify-center cursor-pointer hover:bg-blue-400 duration-200">
+                    <i class="fa-brands fa-twitter"></i>
+                </div>
+                <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-gray-500 flex items-center justify-center cursor-pointer hover:bg-pink-400 duration-200">
+                    <i class="fa-brands fa-dribbble"></i>
+                </div>
+            </div>
+
+            <h3 class="text-lg sm:text-xl font-semibold">${item.name}</h3>
+            <p class="text-xs sm:text-sm">${item.job}</p>
+        </div>
+    </div>
+</div>
     `
 ).join('')

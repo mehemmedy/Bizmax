@@ -22,6 +22,17 @@
             background-position: center;
             background-size: cover;
         }
+        .contactus {
+            position: relative;
+            background-image: url(img/cta_bg.jpeg);
+            background-position: center;
+            background-size: cover;
+        }
+        #contact {
+            background-image: url(img/contact_bg_pattern.svg);
+            background-position: center;
+            background-size: cover;
+        }
     </style>
 </head>
 
@@ -57,7 +68,7 @@
         </section>
         <section class="teammember p-8 lg:p-16 overflow-hidden">
             <div class="container">
-                <div class="textteammember flex flex-col items-center justify-center text-center gap-3">
+                <div class="textteammember flex flex-col items-center justify-center text-center gap-5 mb-8">
                     <div class="sectionheading">
                         <h3 class="text-[20px] text-[#e9a132] capitalize">Meet our team member</h3>
                     </div>
@@ -66,7 +77,58 @@
                             success</h2>
                     </div>
                 </div>
-                <div id="teammembers" class="flex flex-col lg:flex-row items-center justify-between gap-3">
+                <div id="teammembers" class="flex flex-col lg:flex-row items-center justify-center gap-3">
+                </div>
+            </div>
+        </section>
+        <section class="contactus p-8 lg:p-16 overflow-hidden">
+            <div class="container flex flex-col lg:flex-row items-center justify-between gap-5">
+                <div class="flex flex-col gap-5 w-full lg:w-1/2">
+                    <h3 class="text-[20px] text-[#e9a132] capitalize">Contact with us</h3>
+                    <h2 class="text-[36px] text-white font-semibold capitalize">Let's work together?</h2>
+                    <p class="text-white">Providing legal advice, contract drafting, compliance assistance, intellectual property protection, and other legal support for businesses.</p>
+                    <div class="flex flex-col gap-3">
+                        <div class="flex items-center gap-3">
+                            <div class="w-20 h-20 rounded-xl bg-[#e9a132] flex items-center justify-center shrink-0">
+                                <i class="fa-solid fa-phone-volume text-white text-4xl"></i>
+                            </div>
+                            <div class="flex flex-col gap-2">
+                                <p class="text-[#e9a132] text-[16px] capitalize">Have any question?</p>
+                                <h2 class="text-white text-[18px] font-medium">+070 4531 9507</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex flex-col gap-3">
+                        <div class="flex items-center gap-3">
+                            <div class="w-20 h-20 rounded-xl bg-[#e9a132] flex items-center justify-center shrink-0">
+                                <i class="fa-regular fa-envelope text-white text-4xl"></i>
+                            </div>
+                            <div class="flex flex-col gap-2">
+                                <p class="text-[#e9a132] text-[16px] capitalize">Send email</p>
+                                <h2 class="text-white text-[18px] font-medium">bizmax@laralink.com</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex flex-col gap-3">
+                        <div class="flex items-center gap-3">
+                            <div class="w-20 h-20 rounded-xl bg-[#e9a132] flex items-center justify-center shrink-0">
+                                <i class="fa-solid fa-location-dot text-white text-4xl"></i>
+                            </div>
+                            <div class="flex flex-col gap-2">
+                                <p class="text-[#e9a132] text-[16px] capitalize">Address</p>
+                                <h2 class="text-white text-[18px] font-medium">Yewtree Cottage, Kings Pyon,HR4 8PZ</h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="contact" class="bg-white rounded-2xl flex flex-col p-10 lg:p-18 w-full lg:w-1/2 gap-10">
+                    <h2 class="text-[48px] font-semibold text-center">Contact Us</h2>
+                    <form class="flex flex-col gap-3">
+                        <input type="text" placeholder="Your Name" class="rounded-xl p-3 bg-[#f2f3f7] outline-0">
+                        <input type="email" placeholder="Your Email" class="rounded-xl p-3 bg-[#f2f3f7] outline-0">
+                        <textarea placeholder="Message here ..." class="rounded-xl p-8 bg-[#f2f3f7] outline-0"></textarea>
+                        <button class="rounded-xl w-36 p-3 bg-[#e9a132] hover:bg-[#af7925] duration-300 text-white cursor-pointer ">Submit Now</button>
+                    </form>
                 </div>
             </div>
         </section>
