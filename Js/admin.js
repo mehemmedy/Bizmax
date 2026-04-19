@@ -1,25 +1,25 @@
 document.addEventListener('DOMContentLoaded', () => {
       // Select all parent menu items with submenus
-      document.querySelectorAll('#sidebar ul > li > a').forEach((menu) => {
-        menu.addEventListener('click', () => {
-          const subMenu = menu.nextElementSibling;
-          if (!subMenu) return;
-          const arrowIcon = menu.querySelector('.arrowIcon');
+      // document.querySelectorAll('#sidebar ul > li > a').forEach((menu) => {
+      //   menu.addEventListener('click', () => {
+      //     const subMenu = menu.nextElementSibling;
+      //     if (!subMenu) return;
+      //     const arrowIcon = menu.querySelector('.arrowIcon');
 
-          // Check if the submenu is currently open
-          if (subMenu.classList.contains('max-h-0')) {
-            subMenu.classList.remove('max-h-0');
-            subMenu.classList.add('max-h-[500px]'); // Adjust height as needed
-          } else {
-            subMenu.classList.remove('max-h-[500px]');
-            subMenu.classList.add('max-h-0');
-          }
+      //     // Check if the submenu is currently open
+      //     if (subMenu.classList.contains('max-h-0')) {
+      //       subMenu.classList.remove('max-h-0');
+      //       subMenu.classList.add('max-h-[500px]'); // Adjust height as needed
+      //     } else {
+      //       subMenu.classList.remove('max-h-[500px]');
+      //       subMenu.classList.add('max-h-0');
+      //     }
 
-          // Toggle arrow rotation
-          arrowIcon.classList.toggle('rotate-0');
-          arrowIcon.classList.toggle('-rotate-90');
-        });
-      });
+      //     // Toggle arrow rotation
+      //     arrowIcon.classList.toggle('rotate-0');
+      //     arrowIcon.classList.toggle('-rotate-90');
+      //   });
+      // });
 
       let sidebarCloseBtn = document.getElementById('close-sidebar');
       let sidebarOpenBtn = document.getElementById('open-sidebar');
@@ -36,3 +36,21 @@ document.addEventListener('DOMContentLoaded', () => {
         sidebar.style.cssText = 'width: 32px;';
       });
     });
+
+const sermodal=document.getElementById('sermodal')
+const tesmodal=document.getElementById('tesmodal')
+
+function loctes(){
+  window.location.href = 'testimonial.htm'
+}
+function locser(){
+  window.location.href = 'services.htm'
+}
+
+
+function tesModal(){
+  tesmodal.classList.toggle('hidden')
+}
+
+
+
