@@ -1,3 +1,4 @@
+// ! Testimonial
 let cards = document.getElementById('cards')
 fetch('https://69b94968e69653ffe6a73340.mockapi.io/mehemmed/testimonial')
     .then(res => res.json())
@@ -26,3 +27,57 @@ fetch('https://69b94968e69653ffe6a73340.mockapi.io/mehemmed/testimonial')
         `
         ).join('')
     })
+
+// ! Team members
+
+let teammembers = document.getElementById('teammembers')
+
+const tm = [
+    {
+        name: 'Ralph Edwards',
+        job: 'Web designer',
+        image: 'img/team_member_1.jpeg'
+    },
+    {
+        name: 'Wade Warren',
+        job: 'Marketing Coordinator',
+        image: 'img/team_member_2.jpeg'
+    },
+    {
+        name: 'Jane Cooper',
+        job: 'Creative Designer',
+        image: 'img/team_member_3.jpeg'
+    }
+]
+
+teammembers.innerHTML = tm.map(item =>
+    `
+                    <div class="w-72 mx-auto group">
+                        <div class="relative overflow-hidden rounded-[30px]">
+                            <img src="${item.image}"
+                                class="w-full h-[400px] object-cover">
+                            <div
+                                class="absolute bottom-0 w-full bg-[#111] text-white text-center py-6 transition-all duration-300 group-hover:opacity-0">
+                                <h3 class="text-xl font-semibold">${item.name}</h3>
+                                <p class="text-sm">${item.job}</p>
+                            </div>
+                            <div class="absolute bottom-0 w-full 
+                                    bg-orange-400 text-white text-center p-6
+                                    translate-y-full 
+                                    group-hover:translate-y-0
+                                    transition-all duration-500">
+                                <div class="flex justify-center gap-4 mb-4">
+                                    <div class="w-10 h-10 rounded-full bg-gray-500 flex items-center justify-center cursor-pointer"><i class="fa-brands fa-facebook-f"></i>
+                                    </div>
+                                    <div class="w-10 h-10 rounded-full bg-gray-500 flex items-center justify-center cursor-pointer"><i class="fa-brands fa-twitter"></i>
+                                    </div>
+                                    <div class="w-10 h-10 rounded-full bg-gray-500 flex items-center justify-center cursor-pointer"><i class="fa-brands fa-dribbble"></i>
+                                    </div>
+                                </div>
+                                <h3 class="text-xl font-semibold">${item.name}</h3>
+                                <p class="text-sm">${item.job}</p>
+                            </div>
+                        </div>
+                    </div>
+    `
+).join('')
