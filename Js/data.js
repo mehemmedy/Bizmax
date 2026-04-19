@@ -67,11 +67,11 @@ teammembers.innerHTML = tm.map(item =>
                                     group-hover:translate-y-0
                                     transition-all duration-500">
                                 <div class="flex justify-center gap-4 mb-4">
-                                    <div class="w-10 h-10 rounded-full bg-gray-500 flex items-center justify-center cursor-pointer"><i class="fa-brands fa-facebook-f"></i>
+                                    <div class="w-10 h-10 rounded-full bg-gray-500 flex items-center justify-center cursor-pointer hover:bg-blue-500 duration-200"><i class="fa-brands fa-facebook-f"></i>
                                     </div>
-                                    <div class="w-10 h-10 rounded-full bg-gray-500 flex items-center justify-center cursor-pointer"><i class="fa-brands fa-twitter"></i>
+                                    <div class="w-10 h-10 rounded-full bg-gray-500 flex items-center justify-center cursor-pointer hover:bg-blue-400 duration-200"><i class="fa-brands fa-twitter"></i>
                                     </div>
-                                    <div class="w-10 h-10 rounded-full bg-gray-500 flex items-center justify-center cursor-pointer"><i class="fa-brands fa-dribbble"></i>
+                                    <div class="w-10 h-10 rounded-full bg-gray-500 flex items-center justify-center cursor-pointer hover:bg-pink-400 duration-200"><i class="fa-brands fa-dribbble"></i>
                                     </div>
                                 </div>
                                 <h3 class="text-xl font-semibold">${item.name}</h3>
