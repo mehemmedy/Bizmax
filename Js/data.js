@@ -144,4 +144,4 @@ blogs.innerHTML = bdata.map(item =>
                         </div>
                     </div>
 `
-)
+).join('')
