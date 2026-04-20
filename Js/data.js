@@ -92,20 +92,20 @@ let blogs = document.getElementById('blogs')
 
 const bdata = [
     {
-        img:'img/post-details-1.jpeg',
-        title:'What services does your business provide?'
+        img: 'img/post-details-1.jpeg',
+        title: 'What services does your business provide?'
     },
     {
-        img:'img/post-details-2.jpg',
-        title:'Introducing the latest tech features for you'
+        img: 'img/post-details-2.jpg',
+        title: 'Introducing the latest tech features for you'
     },
     {
-        img:'img/post-details-3.jpg',
-        title:'The creative studio program coming soon'
+        img: 'img/post-details-3.jpg',
+        title: 'The creative studio program coming soon'
     }
 ]
 
-blogs.innerHTML = bdata.map(item => 
+blogs.innerHTML = bdata.map(item =>
     `               <div class="max-w-sm overflow-hidden rounded-lg border border-gray-200 bg-white shadow-md">
                         <img class="h-64 w-full object-cover overflow-hidden hover:opacity-50" src="${item.img}" alt="Business team" />
                         <div class="p-6">
