@@ -53,7 +53,7 @@ const tm = [
 teammembers.innerHTML = tm.map(item =>
     `
                     <div class="w-full max-w-sm mx-auto group">
-    <div class="relative overflow-hidden rounded-[30px] aspect-[3/4]">
+    <div class="relative overflow-hidden rounded-[30px] aspect-3/4">
         <img src="${item.image}"
             class="w-full h-full object-cover">
         <div
