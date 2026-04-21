@@ -6,7 +6,7 @@ fetch('https://69b94968e69653ffe6a73340.mockapi.io/mehemmed/testimonial')
         cards.innerHTML = data.map(item =>
             `
                     <div class="tcard mx-auto">
-                        <div class="bg-white p-4 shadow-2xs rounded-2xl flex flex-col border gap-3">
+                        <div class="bg-white p-4 shadow-2xl rounded-2xl flex flex-col border-0 gap-3">
                             <div class="w-16 h-16 rounded-full border overflow-hidden">
                                 <img src="${item.image}" class="" alt="">
                             </div>
