@@ -1,16 +1,15 @@
-const base_url =
-  "https://69b94968e69653ffe6a73340.mockapi.io/mehemmed/services";
+const base_url = "https://api142.nurlandev.click/api/services";
 function elaveET() {
   let title = document.getElementById("title");
   let about = document.getElementById("about");
-  let image = document.getElementById("image");
+  // let image = document.getElementById("image");
   const titleValue = title.value;
   const aboutValue = about.value;
-  const imageValue = image.value;
+  // const imageValue = image.value;
   const data = {
     title: titleValue,
-    about: aboutValue,
-    image: imageValue,
+    description: aboutValue,
+    // image: imageValue,
   };
   fetch(`${base_url}`, {
     method: "POST",
@@ -21,7 +20,7 @@ function elaveET() {
   }).then(() => {
     title.value = "";
     about.value = "";
-    image.value = "";
+    // image.value = "";
     serviceGetir();
   });
 }
@@ -32,17 +31,18 @@ function serviceGetir() {
   fetch(`${base_url}`)
     .then((res) => res.json())
     .then((data) => {
-      serlist.innerHTML = data
+      serlist.innerHTML = data.data
         .map(
           (item) => `
         <div class="bg-[#0b1739] border border-[#1a2d5a] rounded-3xl overflow-hidden shadow-lg hover:shadow-blue-900/20 transition-all duration-300">
           
           <div class="h-[220px] overflow-hidden">
             <img 
-              src="${item.image}" 
+              src="https://api142.nurlandev.click/public/${item.image}" 
               alt="${item.title}"
               class="w-full h-full object-cover  transition-all duration-500"
             >
+            
           </div>
 
           <div class="p-5">
@@ -54,7 +54,7 @@ function serviceGetir() {
             </div>
 
             <p class="text-gray-400 text-sm leading-6 mb-4 line-clamp-3">
-              ${item.about}
+              ${item.description}
             </p>
 
             <div class="flex items-center justify-between pt-4 border-t border-[#1a2d5a]">
@@ -92,18 +92,15 @@ const serelave1 = document.getElementById("serelave1");
 function serredakte(id) {
   let title = document.getElementById("title");
   let about = document.getElementById("about");
-  let image = document.getElementById("image");
-
   serModal();
-
-  fetch(`${base_url}/${id}`)
+  fetch(`${base_url}`)
     .then((res) => res.json())
     .then((data) => {
-      title.value = data.title;
-      about.value = data.about;
-      image.value = data.image;
-      x = id;
+      const item = data.data.find((item) => item.id == id);
 
+      title.value = item.title;
+      about.value = item.description;
+      x = id;
       serupdate1.classList.remove("hidden");
       serelave1.classList.add("hidden");
     });
@@ -112,31 +109,29 @@ function serredakte(id) {
 function serupdate() {
   let title = document.getElementById("title");
   let about = document.getElementById("about");
-  let image = document.getElementById("image");
 
   const data = {
     title: title.value,
-    about: about.value,
-    image: image.value,
+    description: about.value,
   };
 
   fetch(`${base_url}/${x}`, {
-    method: "PUT",
-    body: JSON.stringify(data),
+    method: "POST",
     headers: {
-      "Content-type": "application/json; charset=UTF-8",
+      "Content-Type": "application/json",
+      Accept: "application/json",
     },
-  })
-    .then((res) => res.json())
-    .then(() => {
-      console.log("Yeniləndi");
-      serviceGetir();
+    body: JSON.stringify(data),
+  }).then((data) => {
+    console.log("Yeniləndi:");
 
-      title.value = "";
-      about.value = "";
-      image.value = "";
-      x = 0;
-    });
+    serviceGetir();
+    title.value = "";
+    about.value = "";
+    serupdate1.classList.add("hidden");
+    serelave1.classList.remove("hidden");
+    x = 0;
+  });
 }
 
 function serModal() {
@@ -146,7 +141,7 @@ function serModal() {
   let image = document.getElementById("image");
 
   title.value = "";
-  image.value = "";
+  // image.value = "";
   about.value = "";
 
   serupdate1.classList.add("hidden");
